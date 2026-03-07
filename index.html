@@ -64,7 +64,7 @@
       <h1>KairosClock USB Flasher</h1>
       <p>This updates old KairosClock devices over USB serial, even if they do not have web update support yet.</p>
       <div class="btnrow">
-        <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+        <esp-web-install-button manifest="manifest.json" baud-rate="115200"></esp-web-install-button>
       </div>
       <ol>
         <li>Use Chrome or Edge (desktop).</li>
@@ -73,7 +73,8 @@
         <li>Install update and wait until completion.</li>
       </ol>
       <div class="warn">
-        If flashing fails on Mac, close serial apps, use a direct USB port, and retry.
+        Uses a conservative flash speed (115200) for reliability on older Macs/USB adapters.
+        If logs look noisy after completion, power-cycle and verify behavior before retrying.
       </div>
     </div>
   </div>
