@@ -56,6 +56,22 @@
       color: #7d4a1d;
       margin-top: 14px;
     }
+    .row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .box {
+      flex: 1 1 320px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      background: #fbfdfc;
+    }
+    .box h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
@@ -63,8 +79,21 @@
     <div class="card">
       <h1>KairosClock USB Flasher</h1>
       <p>This updates old KairosClock devices over USB serial, even if they do not have web update support yet.</p>
-      <div class="btnrow">
-        <esp-web-install-button manifest="manifest.json" baud-rate="115200"></esp-web-install-button>
+      <div class="row">
+        <div class="box">
+          <h3>Standard Update (Preserve Settings)</h3>
+          <p>Recommended for normal updates. Keeps Wi-Fi and preferences in NVS.</p>
+          <div class="btnrow">
+            <esp-web-install-button manifest="manifest.json" baud-rate="115200"></esp-web-install-button>
+          </div>
+        </div>
+        <div class="box">
+          <h3>Recovery Update (Full Stack)</h3>
+          <p>Use only if device is boot-looping or shows <code>flash read err, 1000</code>.</p>
+          <div class="btnrow">
+            <esp-web-install-button manifest="manifest_recovery.json" baud-rate="115200"></esp-web-install-button>
+          </div>
+        </div>
       </div>
       <ol>
         <li>Use Chrome or Edge (desktop).</li>
@@ -74,7 +103,7 @@
       </ol>
       <div class="warn">
         Uses a conservative flash speed (115200) for reliability on older Macs/USB adapters.
-        If logs look noisy after completion, power-cycle and verify behavior before retrying.
+        Start with Standard Update. Use Recovery Update only when needed.
       </div>
     </div>
   </div>
