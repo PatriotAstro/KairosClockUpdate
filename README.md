@@ -5,8 +5,7 @@ This page flashes KairosClock over USB serial in Chrome/Edge, even for older fir
 ## Files
 
 - `index.html`
-- `manifest.json` (standard update; preserve NVS settings)
-- `manifest_recovery.json` (full-stack recovery)
+- `manifest.json` (full-stack flash)
 - `bootloader.bin`
 - `partitions.bin`
 - `boot_app0.bin`
@@ -37,6 +36,6 @@ Host the `webflasher` folder over `https://` (GitHub Pages, Netlify, etc).
   - partitions: `0x8000`
   - boot_app0: `0xE000`
   - app: `0x10000`
-  - spiffs: `0x13C000`
-- Use `manifest.json` for normal updates (preserves NVS settings).
-- Use `manifest_recovery.json` only for recovery cases (boot-loop, flash read errors).
+  - spiffs: `0x290000`
+- This web flasher performs a full-stack update (recovery style).
+- On some devices this can clear stored settings (NVS behavior depends on prior partition/layout state).
