@@ -1,6 +1,6 @@
 {
   "name": "KairosClock",
-  "version": "latest",
+  "version": "2026-03-07-safeflash1",
   "new_install_prompt_erase": false,
   "builds": [
     {
