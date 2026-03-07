@@ -6,6 +6,9 @@ This page flashes KairosClock over USB serial in Chrome/Edge, even for older fir
 
 - `index.html`
 - `manifest.json`
+- `bootloader.bin`
+- `partitions.bin`
+- `boot_app0.bin`
 - `firmware.bin`
 - `spiffs.bin`
 
@@ -29,5 +32,8 @@ Host the `webflasher` folder over `https://` (GitHub Pages, Netlify, etc).
 ## Notes
 
 - Flash offsets match this project partition layout:
+  - bootloader: `0x1000`
+  - partitions: `0x8000`
+  - boot_app0: `0xE000`
   - app: `0x10000`
   - spiffs: `0x13C000`
