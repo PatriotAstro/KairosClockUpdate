@@ -1,0 +1,20 @@
+{
+  "name": "KairosClock",
+  "version": "latest",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "firmware.bin",
+          "offset": 65536
+        },
+        {
+          "path": "spiffs.bin",
+          "offset": 1294336
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KairosClock USB Flasher</title>
+  <style>
+    :root {
+      --bg: #eef4f1;
+      --card: #ffffff;
+      --ink: #16211b;
+      --muted: #5f7469;
+      --accent: #2f7d57;
+      --line: #d7e3dc;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(150deg, #e9f2ee, #f7fbf8 55%, #e9eef8);
+      color: var(--ink);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+    .wrap {
+      max-width: 840px;
+      margin: 48px auto;
+      padding: 0 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(24, 42, 33, 0.08);
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+    p, li {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .btnrow {
+      margin: 20px 0;
+    }
+    code {
+      background: #eef4f1;
+      padding: 1px 6px;
+      border-radius: 6px;
+      color: #264635;
+    }
+    .warn {
+      border-left: 4px solid #ce7e31;
+      background: #fff9f1;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #7d4a1d;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>KairosClock USB Flasher</h1>
+      <p>This updates old KairosClock devices over USB serial, even if they do not have web update support yet.</p>
+      <div class="btnrow">
+        <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+      </div>
+      <ol>
+        <li>Use Chrome or Edge (desktop).</li>
+        <li>Connect KairosClock by USB data cable.</li>
+        <li>Click <code>Connect</code> and choose the serial port.</li>
+        <li>Install update and wait until completion.</li>
+      </ol>
+      <div class="warn">
+        If flashing fails on Mac, close serial apps, use a direct USB port, and retry.
+      </div>
+    </div>
+  </div>
+
+  <script
+    type="module"
+    src="https://unpkg.com/esp-web-tools@9.4.3/dist/web/install-button.js?module">
+  </script>
+</body>
+</html>
