@@ -6,30 +6,38 @@
   <title>KairosClock USB Flasher</title>
   <style>
     :root {
-      --bg: #eef4f1;
-      --card: #ffffff;
-      --ink: #16211b;
-      --muted: #5f7469;
+      --ink: #1e1f20;
+      --muted: #627067;
       --accent: #2f7d57;
       --line: #d7e3dc;
+      --panel: #f4f4f2;
     }
     body {
       margin: 0;
-      background: linear-gradient(150deg, #e9f2ee, #f7fbf8 55%, #e9eef8);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 22% 18%, #eef5f2, #dfe9e5 58%, #d8e2de);
       color: var(--ink);
       font-family: "Segoe UI", Tahoma, sans-serif;
     }
-    .wrap {
-      max-width: 840px;
-      margin: 48px auto;
-      padding: 0 16px;
+    .stage {
+      width: min(96vw, 1220px);
+      padding: 10px;
     }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 10px 24px rgba(24, 42, 33, 0.08);
+    .frame {
+      background: #242628;
+      border-radius: 20px;
+      padding: 44px;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+    }
+    .mat {
+      background: var(--panel);
+      border: 12px solid #fff;
+      border-radius: 12px;
+      padding: 24px 26px;
+      box-sizing: border-box;
     }
     h1 {
       margin: 0 0 10px;
@@ -59,8 +67,9 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
+  <div class="stage">
+    <div class="frame">
+      <div class="mat">
       <h1>KairosClock USB Flasher</h1>
       <p>This performs a full recovery-style USB update for KairosClock devices.</p>
       <div class="btnrow">
@@ -75,6 +84,7 @@
       <div class="warn">
         Warning: this is a full-stack flash (bootloader, partitions, app, SPIFFS) and may clear saved settings on some devices.
         Uses conservative speed (115200) for reliability on older Macs/USB adapters.
+      </div>
       </div>
     </div>
   </div>
